@@ -8,6 +8,7 @@ Fuuuuuuuuun respoooooooonses for myyyyyyycroffffft
 * "Who shot first"
 * "Star trek or star wars"
 * "Is it serious?"
+* "What is best in life?"
 
 ## Credits
 Edward Tirado Jr
