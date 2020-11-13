@@ -20,6 +20,10 @@ class MycroftPersonality(MycroftSkill):
     @intent_file_handler('darn.browns.intent')
     def handle_win_lose_bronws(self, message):
         self.speak_dialog('darn.browns')
+        if 'won' in message:
+            self.gui['browns_status'] = 'won'
+        else:
+            self.gui['browns_status'] = 'loss'
 
     @intent_file_handler('here.we.go.brownies.intent')
     def handle_here_we_go_brownies(self, message):
@@ -29,6 +33,6 @@ class MycroftPersonality(MycroftSkill):
     def handle_is_it_serious(self, message):
         self.speak_dialog('is.it.serious')
 
+
 def create_skill():
     return MycroftPersonality()
-
