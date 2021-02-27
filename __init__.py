@@ -24,13 +24,15 @@ class MycroftPersonality(MycroftSkill):
         self.speak_dialog('darn.browns')
         if 'won' in utterance:
             self.gui['browns_status'] = 'won'
+        elif 'steelers' in utterance:
+            self.gui['browns_status'] = 'beat_steelers'
         else:
             self.gui['browns_status'] = 'lost'
 
         browns_data = {
-                "intent": "darn_browns",
-                "game_result": self.gui['browns_status']
-                }
+            "intent": "darn_browns",
+            "game_result": self.gui['browns_status']
+        }
 
         # I'm not using the official QT gui so this
         # is a workaround until I find a better way
