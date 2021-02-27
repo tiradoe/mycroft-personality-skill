@@ -22,6 +22,7 @@ class MycroftPersonality(MycroftSkill):
     def handle_win_lose_browns(self, message):
         utterance = message.data.get('utterance')
         self.speak_dialog('darn.browns')
+
         if 'won' in utterance:
             self.gui['browns_status'] = 'won'
         elif 'steelers' in utterance:
