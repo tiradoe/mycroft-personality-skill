@@ -21,14 +21,16 @@ class MycroftPersonality(MycroftSkill):
     @intent_file_handler('darn.browns.intent')
     def handle_win_lose_browns(self, message):
         utterance = message.data.get('utterance')
-        self.speak_dialog('darn.browns')
 
         if 'won' in utterance:
             self.gui['browns_status'] = 'won'
+            self.speak_dialog('darn.browns', {'game_result': 'won'})
         elif 'steelers' in utterance:
             self.gui['browns_status'] = 'beat_steelers'
+            self.speak_dialog('darn.browns', {'game_result': 'beat_steelers'})
         else:
             self.gui['browns_status'] = 'lost'
+            self.speak_dialog('darn.browns', {'game_result': 'lost'})
 
         browns_data = {
             "intent": "darn_browns",
